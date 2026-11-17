@@ -1,7 +1,7 @@
 
-/* ==============================
+/* =========================================
    1. CSS VARIABLES
-============================== */
+========================================= */
 
 :root {
     --primary: #a78bfa;
@@ -29,9 +29,9 @@ body.light-theme {
     --shadow: rgba(50, 40, 80, 0.1);
 }
 
-/* ==============================
+/* =========================================
    2. GLOBAL STYLES
-============================== */
+========================================= */
 
 * {
     margin: 0;
@@ -45,6 +45,9 @@ html {
 }
 
 body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
     font-family: Arial, Helvetica, sans-serif;
     background: var(--background);
     color: var(--text);
@@ -63,9 +66,14 @@ textarea {
     font: inherit;
 }
 
-/* ==============================
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================
    3. HERO AND NAVIGATION
-============================== */
+========================================= */
 
 .hero {
     background: var(--hero-background);
@@ -79,6 +87,7 @@ textarea {
     align-items: center;
     gap: 25px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .logo {
@@ -126,9 +135,9 @@ textarea {
     transform: translateY(-2px);
 }
 
-/* ==============================
+/* =========================================
    4. INTRODUCTION SECTION
-============================== */
+========================================= */
 
 .intro {
     display: flex;
@@ -141,6 +150,7 @@ textarea {
 
 .intro-content {
     max-width: 650px;
+    flex: 1;
 }
 
 .welcome,
@@ -179,9 +189,9 @@ textarea {
     margin-top: 30px;
 }
 
-/* ==============================
+/* =========================================
    5. BUTTONS
-============================== */
+========================================= */
 
 .btn {
     display: inline-block;
@@ -217,13 +227,14 @@ textarea {
     transform: translateY(-3px);
 }
 
-/* ==============================
+/* =========================================
    6. PROFILE
-============================== */
+========================================= */
 
 .profile {
     text-align: center;
-    min-width: 230px;
+    min-width: 0;
+    flex-shrink: 0;
 }
 
 .profile-circle {
@@ -255,11 +266,12 @@ textarea {
     color: var(--muted);
 }
 
-/* ==============================
+/* =========================================
    7. COMMON SECTIONS
-============================== */
+========================================= */
 
 .section {
+    width: 100%;
     padding: 90px 8%;
 }
 
@@ -283,9 +295,9 @@ textarea {
     border: 1px solid var(--border);
 }
 
-/* ==============================
+/* =========================================
    8. CSS GRID - PROJECTS
-============================== */
+========================================= */
 
 .project-grid {
     display: grid;
@@ -336,9 +348,9 @@ textarea {
     font-size: 13px;
 }
 
-/* ==============================
+/* =========================================
    9. CSS GRID - SKILLS
-============================== */
+========================================= */
 
 .skill-grid {
     display: grid;
@@ -373,12 +385,13 @@ textarea {
     color: var(--muted);
 }
 
-/* ==============================
+/* =========================================
    10. CONTACT FORM
-============================== */
+========================================= */
 
 .contact-container {
     max-width: 650px;
+    width: 100%;
     margin: auto;
     text-align: center;
 }
@@ -393,6 +406,7 @@ textarea {
     flex-direction: column;
     gap: 12px;
     text-align: left;
+    width: 100%;
 }
 
 .contact-form label {
@@ -434,9 +448,9 @@ textarea {
     text-decoration: underline;
 }
 
-/* ==============================
+/* =========================================
    11. FOOTER
-============================== */
+========================================= */
 
 .footer {
     padding: 25px 8%;
@@ -461,235 +475,84 @@ textarea {
     text-decoration: underline;
 }
 
-/* ==============================
-   12. RESPONSIVE DESIGN
-   TABLET
-============================== */
-
-@media (max-width: 768px) {
-
-    .hero {
-        padding: 20px 5%;
-    }
-
-    .navbar {
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .nav-actions {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .intro {
-        flex-direction: column;
-        text-align: center;
-        padding: 55px 0;
-        gap: 40px;
-    }
-
-    .intro-buttons {
-        justify-content: center;
-    }
-
-    .profile {
-        margin-top: 15px;
-    }
-
-    .section {
-        padding: 65px 5%;
-    }
-
-    .footer {
-        justify-content: center;
-        text-align: center;
-    }
-}
-
-/* ==============================
-   13. RESPONSIVE DESIGN
-   MOBILE
-============================== */
-
-@media (max-width: 480px) {
-
-    .logo {
-        font-size: 24px;
-    }
-
-    .nav-links {
-        gap: 12px;
-        font-size: 14px;
-    }
-
-    .intro h1 {
-        font-size: 35px;
-    }
-
-    .intro-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .profile-circle {
-        width: 175px;
-        height: 175px;
-        font-size: 42px;
-    }
-
-    .section {
-        padding: 55px 5%;
-    }
-
-    .project-card,
-    .skill-card {
-        padding: 23px;
-    }
-
-    .footer {
-        flex-direction: column;
-    }
-}
-
-/* ==============================
-   14. ACCESSIBILITY
-============================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-    }
-}
-
-/* =====================================
-   RESPONSIVE DESIGN - ALL DEVICES
-===================================== */
-
-/* Prevent unwanted horizontal scrolling */
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    width: 100%;
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Common responsive containers */
-.section,
-.hero,
-.navbar,
-.intro {
-    width: 100%;
-}
-
-.section {
-    padding-left: 7%;
-    padding-right: 7%;
-}
-
-/* =====================================
-   LARGE DESKTOP - 1440px and above
-===================================== */
+/* =========================================
+   12. LARGE DESKTOP - 1440px AND ABOVE
+========================================= */
 
 @media screen and (min-width: 1440px) {
 
-    .navbar,
-    .intro,
+    .hero,
     .section,
     .footer {
-        max-width: 1500px;
-        margin-left: auto;
-        margin-right: auto;
+        padding-left: max(8%, calc((100% - 1400px) / 2));
+        padding-right: max(8%, calc((100% - 1400px) / 2));
     }
 
     .intro {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-
-    .section {
-        padding-top: 90px;
-        padding-bottom: 90px;
+        min-height: 80vh;
     }
 }
 
-/* =====================================
-   LAPTOP - 1025px to 1439px
-===================================== */
+/* =========================================
+   13. LAPTOP - 1025px TO 1439px
+========================================= */
 
 @media screen and (max-width: 1200px) {
+
+    .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 
     .intro {
         gap: 35px;
     }
 
-    .project-grid,
-    .skill-grid {
-        gap: 20px;
+    .profile-circle {
+        width: 190px;
+        height: 190px;
+    }
+
+    .section {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 
-/* =====================================
-   TABLET - 769px to 1024px
-===================================== */
+/* =========================================
+   14. TABLET - 769px TO 1024px
+========================================= */
 
 @media screen and (max-width: 1024px) {
 
     .navbar {
-        padding: 20px 5%;
+        gap: 18px;
+    }
+
+    .nav-actions {
+        gap: 16px;
+    }
+
+    .nav-links {
+        gap: 16px;
     }
 
     .intro {
-        padding: 65px 5%;
-        gap: 30px;
-    }
-
-    .intro-content {
-        max-width: 60%;
+        gap: 25px;
     }
 
     .intro h1 {
         font-size: clamp(32px, 5vw, 46px);
     }
 
-    .intro h2 {
-        font-size: 22px;
+    .intro-content {
+        min-width: 0;
     }
 
     .profile-circle {
-        width: 180px;
-        height: 180px;
-    }
-
-    .section {
-        padding: 65px 5%;
+        width: 170px;
+        height: 170px;
+        font-size: 42px;
     }
 
     .project-grid {
@@ -701,16 +564,21 @@ img {
     }
 }
 
-/* =====================================
-   MOBILE - 481px to 768px
-===================================== */
+/* =========================================
+   15. MOBILE AND SMALL TABLETS - 768px
+========================================= */
 
 @media screen and (max-width: 768px) {
 
+    .hero {
+        min-height: auto;
+        padding: 20px 5%;
+    }
+
     .navbar {
         flex-direction: column;
+        justify-content: center;
         gap: 18px;
-        padding: 20px;
     }
 
     .nav-actions {
@@ -720,61 +588,63 @@ img {
     }
 
     .nav-links {
-        display: flex;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 18px;
     }
 
     .intro {
         flex-direction: column;
         text-align: center;
-        padding: 55px 25px;
+        min-height: auto;
+        padding: 55px 0;
+        gap: 35px;
     }
 
     .intro-content {
         max-width: 100%;
     }
 
+    .intro-content > p:not(.welcome) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .intro-buttons {
         justify-content: center;
-        flex-wrap: wrap;
     }
 
     .profile {
-        margin-top: 25px;
+        margin-top: 10px;
     }
 
     .section {
-        padding: 55px 25px;
+        padding: 65px 5%;
     }
 
     .project-grid,
     .skill-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .about-content {
         width: 100%;
     }
 
-    .contact-container {
-        width: 100%;
-    }
-
-    .contact-form {
-        width: 100%;
+    .footer {
+        justify-content: center;
+        text-align: center;
     }
 }
 
-/* =====================================
-   SMALL MOBILE - 320px to 480px
-===================================== */
+/* =========================================
+   16. MOBILE PHONES - 480px
+========================================= */
 
 @media screen and (max-width: 480px) {
 
-    .navbar {
-        padding: 16px;
+    .hero {
+        padding: 18px;
     }
 
     .logo {
@@ -795,16 +665,17 @@ img {
     }
 
     .intro {
-        padding: 45px 18px;
+        padding: 45px 0;
     }
 
-    .welcome {
+    .welcome,
+    .section-label {
         font-size: 11px;
         letter-spacing: 1px;
     }
 
     .intro h1 {
-        font-size: 32px;
+        font-size: clamp(29px, 8vw, 36px);
     }
 
     .intro h2 {
@@ -824,7 +695,6 @@ img {
     .btn {
         width: 100%;
         max-width: 260px;
-        text-align: center;
     }
 
     .profile-circle {
@@ -834,11 +704,21 @@ img {
     }
 
     .section {
-        padding: 45px 18px;
+        padding: 50px 18px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
     }
 
     .section-heading h2 {
         font-size: 27px;
+    }
+
+    .project-grid,
+    .skill-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
 
     .project-card,
@@ -846,14 +726,18 @@ img {
         padding: 22px;
     }
 
+    .about-content {
+        padding: 22px;
+    }
+
     .contact-form input,
     .contact-form textarea {
-        width: 100%;
         font-size: 14px;
     }
 
     .footer {
         padding: 20px 15px;
+        flex-direction: column;
         text-align: center;
     }
 
@@ -862,11 +746,15 @@ img {
     }
 }
 
-/* =====================================
-   EXTRA SMALL MOBILE - BELOW 320px
-===================================== */
+/* =========================================
+   17. EXTRA SMALL PHONES - BELOW 320px
+========================================= */
 
 @media screen and (max-width: 319px) {
+
+    .hero {
+        padding: 12px;
+    }
 
     .intro h1 {
         font-size: 26px;
@@ -891,7 +779,27 @@ img {
     .profile-circle {
         width: 120px;
         height: 120px;
+        font-size: 30px;
+    }
+
+    .project-card,
+    .skill-card {
+        padding: 17px;
     }
 }
 
+/* =========================================
+   18. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
